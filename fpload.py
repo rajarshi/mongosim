@@ -10,8 +10,6 @@ n = 0
 docs = []
 for line in x:
     n += 1
-    #    sys.stdout.write( '\r%d' % n)
-    #sys.stdout.flush()
 
     if line.strip().find(" ") == -1: continue
     molregno, bits = line.strip().split(" ")
@@ -22,9 +20,10 @@ for line in x:
            "fpcount":len(bits),
            "smi":""}
     docs.append(doc)
-    if n % 2000 == 0:
+    if n % 5000 == 0:
         coll.insert(docs)
         sys.stdout.write('\rWrote %d' % (n))
         sys.stdout.flush()
         docs = []
+coll.create_index(['fpcount',pymongo.ASCENDING])
 
