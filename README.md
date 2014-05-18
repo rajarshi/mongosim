@@ -7,3 +7,5 @@ python fpload.py
 python profile.py
 ```
 On completion, the time for each query along with the bit length of the query structure will be in ```times.txt```. This assumes you have a MongoDB instance running on the local machine at the default port
+
+The fingerprints were generated using the [CDK](https://github.com/cdk/cdk) and are Signature fingerprints. If you prefer another type, the original SMILES from ChEMBL are available in ```chemblcmpds.csv.zip``` and can be used to generate a different set of fingerprints.
